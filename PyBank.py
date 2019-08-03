@@ -20,6 +20,8 @@ with open(budget_data, newline='') as csv_file:
     reader =csv.reader(csv_file)
     header = next(reader)
     
+    #cretate our loop to go through each row
+
     for row in reader:
     
         x = int((row[1]))
@@ -52,7 +54,8 @@ with open(budget_data, newline='') as csv_file:
 
         #set y to the curent row, which will be the last row
         y = x
-        
+
+#print out the data in the analysis.         
 print("Financial Analysis")  
 print("------------------------------")
 print(f"Total Months: {str(number_month)}")
@@ -64,7 +67,7 @@ print("Greatest Decrease in Profits: " + greatest_loss_month +" ($" + str(greate
 bank_data_output = os.path.join("Bank_Data_Results.csv")
 
 
-#export out the data in a speard sheet 
+#export out the data in a spead sheet 
 with open(bank_data_output, "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["Total Months:",number_month])
